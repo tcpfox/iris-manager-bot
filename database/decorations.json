@@ -1,0 +1,70 @@
+{
+  "decorations": [
+    {
+      "id": 1,
+      "originalPrice": 66000,
+      "sellPrice": 25000,
+      "hasNitro": true
+    },
+    {
+      "id": 2,
+      "originalPrice": 79000,
+      "sellPrice": 38000,
+      "hasNitro": true
+    },
+    {
+      "id": 3,
+      "originalPrice": 105000,
+      "sellPrice": 55000,
+      "hasNitro": true
+    },
+    {
+      "id": 4,
+      "originalPrice": 111000,
+      "sellPrice": 65000,
+      "hasNitro": true
+    },
+    {
+      "id": 5,
+      "originalPrice": 131000,
+      "sellPrice": 80000,
+      "hasNitro": true
+    },
+    {
+      "id": 6,
+      "originalPrice": 141000,
+      "sellPrice": 90000,
+      "hasNitro": true
+    },
+    {
+      "id": 7,
+      "originalPrice": 79000,
+      "sellPrice": 35000,
+      "hasNitro": false
+    },
+    {
+      "id": 8,
+      "originalPrice": 131000,
+      "sellPrice": 95000,
+      "hasNitro": false
+    },
+    {
+      "id": 9,
+      "originalPrice": 141000,
+      "sellPrice": 105000,
+      "hasNitro": false
+    },
+    {
+      "id": 10,
+      "originalPrice": 146000,
+      "sellPrice": 110000,
+      "hasNitro": false
+    },
+    {
+      "id": 11,
+      "originalPrice": 189000,
+      "sellPrice": 140000,
+      "hasNitro": false
+    }
+  ]
+}

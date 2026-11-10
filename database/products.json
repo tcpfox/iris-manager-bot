@@ -1,0 +1,71 @@
+{
+    "items": [
+        {
+            "id": "nitro_trial_3_thang",
+            "name": "Nitro Trial 3 Tháng",
+            "description": "NITRO BOOST 3 THÁNG - DÙNG THỬ",
+            "price": 70000,
+            "categoryId": "1737559157648",
+            "additionalInfo": "Không có thông tin thêm",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https/r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "requestContent": "abcxuz",
+            "tosContent": "Điều khoản dịch vụ cho Nitro Trial 3 Tháng sẽ được áp dụng."
+        },
+        {
+            "id": "nitro_random",
+            "name": "Nitro Random",
+            "description": "Nitro random đã dừng hoạt động",
+            "price": 25000,
+            "categoryId": "1737559157648",
+            "additionalInfo": "Không có thông tin thêm",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https/r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "requestContent": "Sản phẩm này hiện đã ngừng hoạt động.",
+            "tosContent": "Không áp dụng điều khoản dịch vụ."
+        },
+        {
+            "id": "nitro_boost_1_thang_login",
+            "name": "Nitro Boost 1 Tháng Login",
+            "description": "Nitro boost 1 tháng với login",
+            "price": 90000,
+            "categoryId": "1737559157648",
+            "additionalInfo": "Không có thông tin thêm",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https/r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "requestContent": "Liên hệ support để được hướng dẫn chi tiết.",
+            "tosContent": "Điều khoản dịch vụ cho Nitro Boost 1 Tháng Login."
+        },
+        {
+            "id": "nitro_boost_1_nm",
+            "name": "Nitro Boost 1 Năm",
+            "description": "Nitro boost 1 năm đã dừng hoạt động",
+            "price": 500000,
+            "categoryId": "1737559157648",
+            "additionalInfo": "Không có thông tin thêm",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https/r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "requestContent": "Sản phẩm này hiện đã ngừng hoạt động.",
+            "tosContent": "Không áp dụng điều khoản dịch vụ."
+        },
+        {
+            "id": "nitro_boost_1_nam_login",
+            "name": "Nitro Boost 1 Năm Login",
+            "description": "Nitro boost 1 năm với login",
+            "price": 750000,
+            "categoryId": "1737559157648",
+            "additionalInfo": "Không có thông tin thêm",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https://r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "requestContent": "Liên hệ support để được hướng dẫn chi tiết.",
+            "tosContent": "Điều khoản dịch vụ cho Nitro Boost 1 Năm Login."
+        },
+        {
+            "id": "14_boost_server_1_thng",
+            "name": "14 Boost Server 1 Tháng",
+            "description": "Bút sv",
+            "price": 90000,
+            "categoryId": "1737559202511",
+            "imageUrl": "https://images-ext-1.discordapp.net/external/AddtcJEeJ25jrjlyQUtGsRYliQptN6e07KTEq6bPiNo/https/r2.urbansito.shop/ty.png?format=webp&quality=lossless&width=1323&height=744",
+            "additionalInfo": "Không có thông tin thêm",
+            "createdAt": "2025-09-30T15:10:28.256Z",
+            "createdBy": "614441538373550081",
+            "requestContent": "abc"
+        }
+    ]
+}

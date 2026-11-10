@@ -1,0 +1,10 @@
+node_modules/
+.env
+config.json
+tool/config.json
+authentication/
+database/orders.json
+database/orders.txt
+tool/orders.json
+tool/orders1.json
+*.log

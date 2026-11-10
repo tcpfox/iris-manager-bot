@@ -1,0 +1,288 @@
+const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
+const { createCanvas, loadImage } = require('canvas');
+const config = require('../../config.json');
+const autobank = require('../../utils/autobank');
+
+module.exports = {
+   data: new SlashCommandBuilder()
+        .setName('hoadon')
+        .setDescription('✨ Tạo hóa đơn thanh toán')
+        .addUserOption(option =>
+            option.setName('user')
+                .setDescription('🤵 Người mua hàng')
+                .setRequired(true))
+        .addStringOption(option => 
+            option.setName('amount')
+                .setDescription('💵 Số tiền thanh toán (VD 50000 hoặc 50k)')
+                .setRequired(true)),
+
+    async execute(interaction) {
+        await interaction.deferReply();
+        
+        const user = interaction.options.getUser('user');
+        const amountStr = interaction.options.getString('amount');
+        
+        // Generate random order code (10 characters: letters and numbers)
+        const orderCode = generateOrderCode();
+        
+        // Format transfer description with random order code
+        const description = `SQRIRISMARKET ${user.username} ${orderCode}`;
+        const descriptionEncoded = encodeURIComponent(description);
+        
+        let amount;
+        try {
+            amount = parseAmount(amountStr);
+        } catch (error) {
+            return interaction.editReply({
+                content: "❌ **Số tiền không hợp lệ.** Vui lòng nhập số tiền chính xác (VD: 50000 hoặc 50k).",
+                ephemeral: true
+            });
+        }
+
+        try {
+            // Generate QR URL using img.vietqr.io
+            const qrUrl = `https://qr.sepay.vn/img?acc=002009025&bank=MB&amount=${amount}&des=${descriptionEncoded}&template=qronly`;
+            
+            // Load QR code from URL
+            const qrImage = await loadImage(qrUrl);
+
+            // Create canvas with enhanced styling
+            const canvas = createCanvas(800, 500);
+            const ctx = canvas.getContext('2d');
+
+            // Create sophisticated dark gradient background
+            const baseGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            baseGradient.addColorStop(0, '#1a1f2c');
+            baseGradient.addColorStop(0.5, '#242b3d');
+            baseGradient.addColorStop(1, '#2d364a');
+            ctx.fillStyle = baseGradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add decorative patterns with glow effect
+            ctx.save();
+            ctx.globalAlpha = 0.05;
+            for (let i = -canvas.height; i < canvas.width; i += 40) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i + canvas.height, canvas.height);
+                ctx.strokeStyle = '#4f8aff';
+                ctx.lineWidth = 1;
+                ctx.shadowColor = '#4f8aff';
+                ctx.shadowBlur = 5;
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            // Add glowing circular patterns
+            ctx.save();
+            ctx.globalAlpha = 0.03;
+            for (let i = 0; i < canvas.width; i += 120) {
+                for (let j = 0; j < canvas.height; j += 120) {
+                    ctx.beginPath();
+                    ctx.arc(i, j, 50, 0, Math.PI * 2);
+                    ctx.strokeStyle = '#6e9fff';
+                    ctx.shadowColor = '#6e9fff';
+                    ctx.shadowBlur = 10;
+                    ctx.stroke();
+                }
+            }
+            ctx.restore();
+
+            // Add animated-like wave pattern
+            ctx.save();
+            ctx.globalAlpha = 0.04;
+            for (let y = 0; y < canvas.height; y += 60) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                for (let x = 0; x < canvas.width; x += 50) {
+                    ctx.quadraticCurveTo(
+                        x + 25,
+                        y + Math.sin(x/40) * 20,
+                        x + 50,
+                        y
+                    );
+                }
+                ctx.strokeStyle = '#8ab4ff';
+                ctx.shadowColor = '#8ab4ff';
+                ctx.shadowBlur = 5;
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            // QR code container with enhanced glowing effect
+            ctx.save();
+            const qrX = 30;
+            const qrY = 60;
+            const qrSize = 300;
+            const radius = 20;
+
+            // Draw outer glow
+            ctx.shadowColor = 'rgba(79, 138, 255, 0.3)';
+            ctx.shadowBlur = 25;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.beginPath();
+            ctx.roundRect(qrX - 15, qrY - 15, qrSize + 30, qrSize + 30, radius);
+            ctx.fillStyle = '#2a3142';
+            ctx.fill();
+
+            // Draw border with glow
+            ctx.beginPath();
+            ctx.roundRect(qrX - 10, qrY - 10, qrSize + 20, qrSize + 20, radius);
+            ctx.strokeStyle = 'rgba(79, 138, 255, 0.5)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.restore();
+
+            // Draw QR code with white background
+            ctx.save();
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(qrX, qrY, qrSize, qrSize);
+            ctx.restore();
+
+            // Draw the QR image from vietqr.io
+            ctx.drawImage(qrImage, qrX, qrY, qrSize, qrSize);
+
+            // Enhanced glowing divider
+            ctx.save();
+            const dividerGradient = ctx.createLinearGradient(360, 40, 360, 460);
+            dividerGradient.addColorStop(0, 'rgba(79, 138, 255, 0.1)');
+            dividerGradient.addColorStop(0.5, 'rgba(79, 138, 255, 0.4)');
+            dividerGradient.addColorStop(1, 'rgba(79, 138, 255, 0.1)');
+            ctx.strokeStyle = dividerGradient;
+            ctx.shadowColor = 'rgba(79, 138, 255, 0.5)';
+            ctx.shadowBlur = 10;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(360, 40);
+            ctx.lineTo(360, 460);
+            ctx.stroke();
+            ctx.restore();
+
+            // Enhanced title with glowing effect
+            ctx.save();
+            ctx.font = 'bold 32px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = 'rgba(79, 138, 255, 0.5)';
+            ctx.shadowBlur = 15;
+            ctx.textAlign = 'center';
+            ctx.fillText('THÔNG TIN THANH TOÁN', 580, 80);
+            ctx.restore();
+
+            // Payment details with improved styling
+            const details = [
+                { label: 'NGÂN HÀNG:', value: 'MB BANK', icon: '🏦' },
+                { label: 'CHỦ TÀI KHOẢN:', value: 'NGUYEN HUY HOANG', icon: '👤' },
+                { label: 'SỐ TÀI KHOẢN:', value: '002009025', icon: '💰' },
+                { label: 'SỐ TIỀN:', value: `${amount.toLocaleString()}đ`, icon: '💵' },
+                { label: 'MÃ ĐƠN HÀNG:', value: `${orderCode}`, icon: '🔢' }
+            ];
+
+            let y = 140;
+            details.forEach(detail => {
+                // Draw icon
+                ctx.save();
+                ctx.font = '20px Arial';
+                ctx.shadowColor = 'rgba(79, 138, 255, 0.5)';
+                ctx.shadowBlur = 5;
+                ctx.fillText(detail.icon, 400, y);
+                ctx.restore();
+                
+                // Draw label
+                ctx.save();
+                ctx.fillStyle = '#8ab4ff';
+                ctx.font = 'bold 20px Arial';
+                ctx.shadowColor = 'rgba(79, 138, 255, 0.3)';
+                ctx.shadowBlur = 3;
+                ctx.fillText(detail.label, 430, y);
+                ctx.restore();
+                
+                // Draw value with glowing effect
+                ctx.save();
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '20px Arial';
+                const valueY = y + 30;
+                
+                // Draw value
+                ctx.fillText(detail.value, 430, valueY);
+                y = valueY;
+                
+                y += 20;
+                ctx.restore();
+            });
+
+            const attachment = new AttachmentBuilder(canvas.toBuffer(), { name: 'payment.png' });
+            const embed = new EmbedBuilder()
+                .setColor('#1a73e8')
+                .setTitle('💰 Mã QR Thanh Toán MB Bank')
+                .setDescription([
+                    '```md',
+                    '# Hướng dẫn thanh toán',
+                    '1. Mở app MB Bank',
+                    '2. Chọn "Quét QR"', 
+                    '3. Quét mã và kiểm tra thông tin',
+                    '4. Xác nhận thanh toán',
+                    '```',
+                    ''
+                ].join('\n'))
+                .addFields(
+                    { name: '📋 Thông tin đơn hàng', value: `**Mã đơn:** ${orderCode}\n**Người mua:** ${user.username}\n**Số tiền:** ${amount.toLocaleString()}đ`, inline: false }
+                )
+                .setImage('attachment://payment.png')
+                .setTimestamp()
+                .setFooter({ text: 'Iris Market • Thanh toán an toàn', iconURL: config.IMG });
+
+            const message = await interaction.editReply({ 
+                embeds: [embed], 
+                files: [attachment] 
+            });
+
+            // Check for payment
+            autobank.addPendingPayment({
+                userId: user.id,
+                username: user.username,
+                amount: amount,
+                description: description,
+                interaction: interaction,
+                timestamp: Date.now()
+            });
+
+        } catch (error) {
+            console.error('Error:', error);
+            await interaction.editReply({
+                content: '❌ Đã xảy ra lỗi. Vui lòng thử lại sau.',
+                ephemeral: true
+            });
+        }
+    }
+};
+
+// Helper function to generate random order code (10 characters: letters and numbers)
+function generateOrderCode() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < 10; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+}
+
+// Helper function to parse amounts like "50k" to 50000
+function parseAmount(amountStr) {
+    // Remove any non-alphanumeric characters except 'k' and 'm'
+    const cleanStr = amountStr.replace(/[^\d.km]/gi, '').toLowerCase();
+    
+    if (cleanStr.endsWith('k')) {
+        const value = parseFloat(cleanStr.slice(0, -1));
+        if (isNaN(value)) throw new Error('Invalid amount');
+        return Math.round(value * 1000);
+    } else if (cleanStr.endsWith('m')) {
+        const value = parseFloat(cleanStr.slice(0, -1));
+        if (isNaN(value)) throw new Error('Invalid amount');
+        return Math.round(value * 1000000);
+    } else {
+        const value = parseFloat(cleanStr);
+        if (isNaN(value)) throw new Error('Invalid amount');
+        return Math.round(value);
+    }
+}

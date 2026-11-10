@@ -1,0 +1,120 @@
+{
+  "items": [
+    {
+      "id": "1737559157648",
+      "name": "Nitro",
+      "description": "Các loại nitro đa đạng, chất lượng",
+      "icon": "1331479864099995670",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:19:17.648Z",
+      "createdBy": "1275547990995505155",
+      "position": 0
+    },
+    {
+      "id": "1737559202511",
+      "name": "Boost Server",
+      "description": "Nâng cấp máy chủ",
+      "icon": "1331480934121341019",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:20:02.511Z",
+      "createdBy": "1275547990995505155",
+      "position": 1
+    },
+    {
+      "id": "1737559220389",
+      "name": "Tăng Member Discord ",
+      "description": "Tăng Số Lượng Member Server",
+      "icon": "1331483462959366194",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:20:20.389Z",
+      "createdBy": "1275547990995505155",
+      "position": 2
+    },
+    {
+      "id": "1737559452644",
+      "name": "OwO Cash",
+      "description": "Cowoncy Cash",
+      "icon": "1331482666935255130",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:24:12.644Z",
+      "createdBy": "1275547990995505155",
+      "position": 3
+    },
+    {
+      "id": "1737559244043",
+      "name": "Spotify ",
+      "description": "Tài Khoản Spotify Premium",
+      "icon": "1331481416646529125",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:20:44.043Z",
+      "createdBy": "1275547990995505155",
+      "position": 4
+    },
+    {
+      "id": "1737559272957",
+      "name": "Youtube",
+      "description": "Tài Khoản Youtube Premium",
+      "icon": "1320241934488440832",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:21:12.957Z",
+      "createdBy": "1275547990995505155",
+      "position": 5
+    },
+    {
+      "id": "1737559337644",
+      "name": "Netflix",
+      "description": "Tài Khoản Netflix Premium",
+      "icon": "1331482150649856070",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:22:17.644Z",
+      "createdBy": "1275547990995505155",
+      "position": 6
+    },
+    {
+      "id": "1737559355270",
+      "name": "Canva",
+      "description": "Tài Khoản Canva Pro",
+      "icon": "1331482278928580731",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:22:35.271Z",
+      "createdBy": "1275547990995505155",
+      "position": 7
+    },
+    {
+      "id": "1737559415071",
+      "name": "Chat GPT 4",
+      "description": "Tài Khoản Chat GPT Plus",
+      "icon": "1331483859623346256",
+      "additionalInfo": "",
+      "createdAt": "2025-01-22T15:23:35.071Z",
+      "createdBy": "1275547990995505155",
+      "showInPriceList": false,
+      "displayStyle": "inline",
+      "displayOrder": 0,
+      "displayAfterProducts": false,
+      "updatedAt": "2025-01-23T06:31:49.528Z",
+      "updatedBy": "1275547990995505155",
+      "position": 8
+    },
+    {
+      "id": "1737623362440",
+      "name": "Capcut",
+      "description": "Tài khoản Capcut Pro",
+      "icon": "1331484119221407856",
+      "additionalInfo": "",
+      "createdAt": "2025-01-23T09:09:22.440Z",
+      "createdBy": "1275547990995505155",
+      "position": 9
+    },
+    {
+      "id": "1737812050261",
+      "name": "Acc Discord Cổ",
+      "description": "Tài khoản discord cổ",
+      "icon": "1332704990443081790",
+      "additionalInfo": "",
+      "createdAt": "2025-01-25T13:34:10.261Z",
+      "createdBy": "1275547990995505155"
+    }
+  ]
+}
+

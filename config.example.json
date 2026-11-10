@@ -1,0 +1,44 @@
+{
+  "TOKEN": "YOUR_BOT_TOKEN",
+  "PREFIX": ".",
+  "OWNER_ID": "564988914297864200",
+  "COLORS": {
+    "SUCCESS": "#00ff00",
+    "ERROR": "#ff0000",
+    "INFO": "#0099ff",
+    "WARNING": "#ffaa00"
+  },
+
+  "FEEDBACK_CHANNEL": "1318584959467782239",
+  "FEEDBACK_REACTIONS": ["🔥", "⭐", "💯"],
+  "IMG": "https://media.discordapp.net/attachments/1318584957177958451/1483701486927089705/avar_1.jpg?ex=69bb8c30&is=69ba3ab0&hm=28552141dbb6bd32e7c8e8f01686b09b07f4ddc431e008444fa3295729d602c7&=&format=webp&width=740&height=740",
+  "LEGITIMG": "https://media.discordapp.net/attachments/1318584957177958451/1483701486927089705/avar_1.jpg?ex=69bb8c30&is=69ba3ab0&hm=28552141dbb6bd32e7c8e8f01686b09b07f4ddc431e008444fa3295729d602c7&=&format=webp&width=740&height=740",
+
+  "WELCOME_CHANNEL": "1318584956720644203",
+  "WELCOME_IMAGE": "welcome.jpg",
+  "GOODBYE_CHANNEL": "1318584956720644204",
+  "GOODBYE_IMAGE": "goodbye.jpg",
+
+  "CHANNELS": {
+    "PRICE_CHANNEL": "1318584958910206063",
+    "DECO_CHANNEL": "1318584959153344522"
+  },
+
+  "BACKUP_FEEDBACK_CHANNEL": "1439144835503227043",
+  "BACKUP_TAG_USERNAME": "tcpfox.v4",
+
+  "THUMB": "https://media.discordapp.net/attachments/1318584957177958451/1483701486927089705/avar_1.jpg?ex=69bb8c30&is=69ba3ab0&hm=28552141dbb6bd32e7c8e8f01686b09b07f4ddc431e008444fa3295729d602c7&=&format=webp&width=740&height=740",
+  "GIFIMG": "https://media.discordapp.net/attachments/1318584957177958451/1483701486927089705/avar_1.jpg?ex=69bb8c30&is=69ba3ab0&hm=28552141dbb6bd32e7c8e8f01686b09b07f4ddc431e008444fa3295729d602c7&=&format=webp&width=740&height=740",
+
+  "WARRANTY": {
+    "FEEDBACK_DEADLINE_HOURS": 30,
+    "AUTO_CHECK_INTERVAL_MINUTES": 1,
+    "ADMIN_NOTIFICATION_CHANNEL": "1439144835503227043",
+    "DEFAULT_SELLER_USERNAME": "tcpfox.v4"
+  },
+
+  "STAFF_ROLES": [
+    "1318584956708192293"
+  ]
+
+}

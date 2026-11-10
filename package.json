@@ -1,0 +1,22 @@
+{
+  "name": "iris-market",
+  "version": "1.0.0",
+  "description": "A Discord Bot For Iris Market",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "canvas": "^3.0.0-rc3",
+    "discord.js": "^14.25.1",
+    "form-data": "^4.0.4",
+    "googleapis": "^128.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "author": "tcpfox.v1",
+  "license": "MIT"
+}
